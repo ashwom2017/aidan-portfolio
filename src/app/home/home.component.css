@@ -1,0 +1,49 @@
+.home-container {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.buttons {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #005ea2;
+}
+
+.socials a {
+  margin: 0 1rem;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
