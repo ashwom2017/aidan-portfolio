@@ -1,0 +1,163 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+
+  background: radial-gradient(circle at center, #f7f9fc, #d9e2ec);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/* Main layout containers */
+.sidenav-container, mat-sidenav-container, mat-sidenav-content {
+  height: 100%;
+  background: transparent; /* Let the html/body gradient show through */
+}
+
+/* Sidenav */
+.sidenav {
+  width: 280px;
+  background-color: #fafafa;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.sidenav:hover {
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Toolbar */
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #01579b;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.mat-toolbar:hover {
+  background-color: #0277bd;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: none;
+  gap: 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.desktop-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #e3f2fd;
+}
+
+.active {
+  border-bottom: 3px solid #bbdefb;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  mat-sidenav {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+
+  button[mat-icon-button] {
+    display: none;
+  }
+}
+
+.main-content {
+  padding: 32px 24px;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background: rgba(255 255 255 / 0.85); /* translucent white */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(63, 81, 181, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.main-content:hover {
+  box-shadow: 0 15px 40px rgba(63, 81, 181, 0.25);
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f5f5f5;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  margin-top: 24px;
+}
+
+.app-footer a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 8px;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Remove white card / blue rectangle from inside content */
+.content-wrapper,
+.main-content,
+mat-card,
+router-outlet,
+main,
+section,
+article,
+div {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove mat-card styles globally if used */
+mat-card {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Reset extra paddings or borders that cause visual blocks */
+.content-wrapper > * {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
