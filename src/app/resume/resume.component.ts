@@ -5,8 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './resume.component.html',
-  styleUrl: './resume.component.css'
+  styleUrls: ['./resume.component.css'],
 })
 export class ResumeComponent {
-
+  openResume() {
+    window.open('assets/AidanShwomNYResume_September2024.pdf', '_blank');
+  }
 }
