@@ -161,3 +161,41 @@ mat-card {
   margin: 0 !important;
   border: none !important;
 }
+
+.portfolio-title {
+  padding: 8px 12px; /* add some padding for bigger hover area */
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  border-radius: 4px; /* smooth edges to match hover */
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.portfolio-title:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #e3f2fd;
+}
+
+/* Prevent horizontal overflow on mobile */
+.mat-toolbar {
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Hide any accidental overflow */
+}
+
+/* Optional: make font smaller on very small screens */
+@media (max-width: 480px) {
+  .portfolio-title {
+    font-size: 1.25rem;
+  }
+}
