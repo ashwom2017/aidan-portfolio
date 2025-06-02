@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+/* Shared Section Wrapper */
+.card-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 16px;
+  box-sizing: border-box;
+}
+
+/* Glass-style Card Content */
 .hero-content {
   max-width: 640px;
   width: 100%;
@@ -161,12 +170,4 @@ button[color="accent"]:hover {
   .hero-content {
     padding: 16px 12px;
   }
-}
-
-.info-section {
-  padding: 80px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
 }
