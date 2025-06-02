@@ -6,9 +6,9 @@
 }
 
 .hero-content {
-  max-width: 90vw; /* Let it grow up to 90% of viewport width */
-  width: 640px;    /* Keep max width of 640px, but shrink on smaller screens */
-  margin: 5vh auto; /* Smaller vertical spacing based on viewport height */
+  max-width: 640px; /* max width cap */
+  width: 90vw;       /* responsive width based on viewport */
+  margin: 5vh auto;
   padding: 30px 40px;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
@@ -142,4 +142,26 @@ button[color="accent"]:hover {
 .hero-actions button {
   margin-right: 1rem;
   text-transform: none;
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 16px 12px;
+    margin: 0 8px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(63, 81, 181, 0.2);
+    min-height: auto; /* Let it size naturally */
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-content {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
 }
