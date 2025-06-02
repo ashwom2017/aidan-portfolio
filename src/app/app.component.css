@@ -1,21 +1,35 @@
+/* Base layout */
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
-
   background: radial-gradient(circle at center, #f7f9fc, #d9e2ec);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden;
+  width: 100vw;
   max-width: 100vw;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Safari + Chrome */
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Main layout containers */
-.sidenav-container, mat-sidenav-container, mat-sidenav-content {
+.sidenav-container,
+mat-sidenav-container,
+mat-sidenav-content {
   height: 100%;
-  background: transparent; /* Let the html/body gradient show through */
+  background: transparent;
 }
 
 /* Sidenav */
@@ -25,7 +39,6 @@ html, body {
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
-
 .sidenav:hover {
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
 }
@@ -41,18 +54,14 @@ html, body {
   font-size: 1.25rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s ease;
-  width: 100%;       
-  max-width: 100vw;
+  width: 100%;
+  padding: 0 8px;
   box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
   overflow-x: hidden;
 }
-
 .mat-toolbar:hover {
   background-color: #0277bd;
 }
-
 .spacer {
   flex: 1 1 auto;
 }
@@ -64,7 +73,6 @@ html, body {
   font-weight: 600;
   font-size: 1rem;
 }
-
 .desktop-nav a {
   text-decoration: none;
   color: white;
@@ -72,44 +80,40 @@ html, body {
   border-radius: 4px;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
-
 .desktop-nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: #e3f2fd;
 }
-
 .active {
   border-bottom: 3px solid #bbdefb;
   font-weight: 700;
 }
 
+/* Responsive behavior */
 @media (min-width: 768px) {
   mat-sidenav {
     display: none;
   }
-
   .desktop-nav {
     display: flex;
   }
-
   button[mat-icon-button] {
     display: none;
   }
 }
 
+/* Main content */
 .main-content {
   padding: 32px 24px;
   width: 100%;
   min-height: calc(100vh - 64px);
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  background: rgba(255 255 255 / 0.85); /* translucent white */
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(63, 81, 181, 0.15);
   transition: box-shadow 0.3s ease;
 }
-
 .main-content:hover {
   box-shadow: 0 15px 40px rgba(63, 81, 181, 0.25);
 }
@@ -130,19 +134,17 @@ html, body {
   width: 100%;
   margin-top: 24px;
 }
-
 .app-footer a {
   color: #1976d2;
   text-decoration: none;
   font-weight: 600;
   margin: 0 8px;
 }
-
 .app-footer a:hover {
   text-decoration: underline;
 }
 
-/* Remove white card / blue rectangle from inside content */
+/* Remove unwanted material/Angular card styling */
 .content-wrapper,
 .main-content,
 mat-card,
@@ -150,27 +152,20 @@ router-outlet,
 main,
 section,
 article,
-div {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Remove mat-card styles globally if used */
+div,
 mat-card {
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
 }
-
-/* Reset extra paddings or borders that cause visual blocks */
 .content-wrapper > * {
   padding: 0 !important;
   margin: 0 !important;
-  border: none !important;
 }
 
+/* Portfolio title styling */
 .portfolio-title {
-  padding: 8px 12px; /* add some padding for bigger hover area */
+  padding: 8px 12px;
   color: white;
   font-weight: 700;
   font-size: 1.5rem;
@@ -178,35 +173,44 @@ mat-card {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  border-radius: 4px; /* smooth edges to match hover */
+  border-radius: 4px;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
-
 .portfolio-title:hover {
-  text-decoration: none;
   background-color: rgba(255, 255, 255, 0.2);
   color: #e3f2fd;
 }
-
-/* Prevent horizontal overflow on mobile */
-.mat-toolbar {
-  padding-left: 8px;
-  padding-right: 8px;
-  box-sizing: border-box;
-  overflow-x: hidden; /* Hide any accidental overflow */
-}
-
-/* Optional: make font smaller on very small screens */
 @media (max-width: 480px) {
   .portfolio-title {
     font-size: 1.25rem;
   }
 }
 
-* {
-  box-sizing: border-box;
+/* Flex/Grid layout helpers */
+.flex-wrap,
+.row,
+.mat-toolbar-row,
+.mat-row {
+  flex-wrap: wrap !important;
+  max-width: 100% !important;
+}
+
+/* Text wrapping protection */
+.portfolio-title,
+.desktop-nav a,
+.mat-toolbar,
+.main-content,
+.content-wrapper {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal !important;
+}
+
+/* Ensure mat-sidenav doesn’t overflow */
+mat-sidenav {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
 }

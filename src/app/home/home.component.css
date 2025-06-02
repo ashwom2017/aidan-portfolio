@@ -2,12 +2,14 @@
   display: block;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
-  color: #0d47a1; /* Darker Blue */
+  color: #0d47a1;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .hero-content {
-  max-width: 640px; /* max width cap */
-  width: 90vw;       /* responsive width based on viewport */
+  max-width: 640px;
+  width: 100%;
   margin: 5vh auto;
   padding: 30px 40px;
   background: rgba(255, 255, 255, 0.85);
@@ -20,27 +22,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
+/* Typography */
 h1 {
   font-size: 5rem;
   font-weight: 900;
   margin: 0 0 0.2em;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  color: #01579b; /* Strong Blue */
+  color: #01579b;
   user-select: none;
-}
-
-.highlight {
-  color: #0288d1; /* Accent Azure Blue — keep as accent */
 }
 
 h2 {
   font-weight: 600;
   font-size: 1.8rem;
   margin: 0 0 1em;
-  color: #0277bd; /* Medium Blue */
+  color: #0277bd;
   font-style: italic;
   user-select: none;
 }
@@ -48,13 +48,17 @@ h2 {
 p {
   font-size: 1.3rem;
   line-height: 1.7;
-  color: #0d47a1; /* Dark Blue */
+  color: #0d47a1;
   max-width: 540px;
   margin: 0 auto 2.5em;
 }
 
+/* Highlight class */
+.highlight {
+  color: #0288d1;
+}
 
-/* Buttons container */
+/* Button Group */
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -62,7 +66,7 @@ p {
   flex-wrap: wrap;
 }
 
-button[mat-button] {
+.hero-actions button {
   font-weight: 700;
   text-transform: uppercase;
   padding: 18px 36px;
@@ -74,13 +78,13 @@ button[mat-button] {
   color: white;
 }
 
-button[mat-button]:hover {
+.hero-actions button:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(2, 136, 209, 0.5);
 }
 
 button[color="primary"] {
-  background-color: #0288d1; /* Azure Blue */
+  background-color: #0288d1;
 }
 
 button[color="primary"]:hover {
@@ -95,7 +99,13 @@ button[color="accent"]:hover {
   background-color: #003c8f;
 }
 
-/* Responsive */
+/* Name Styling */
+.hero-name {
+  color: #01579b;
+  font-weight: 700;
+}
+
+/* Responsive Fixes */
 @media (max-width: 768px) {
   h1 {
     font-size: 3.8rem;
@@ -109,16 +119,20 @@ button[color="accent"]:hover {
     font-size: 1.1rem;
   }
 
-  button[mat-button] {
+  .hero-actions button {
     min-width: 140px;
     font-size: 1rem;
     padding: 14px 28px;
   }
+
+  .hero-content {
+    padding: 24px 20px;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 
   h2 {
@@ -129,39 +143,22 @@ button[color="accent"]:hover {
     font-size: 1rem;
   }
 
+  .hero-content {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
   .hero-actions {
     gap: 16px;
   }
 }
 
-.hero-name {
-  color: #01579b;
-  font-weight: 700;
-}
-
-.hero-actions button {
-  margin-right: 1rem;
-  text-transform: none;
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 16px 12px;
-    margin: 0 8px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(63, 81, 181, 0.2);
-    min-height: auto; /* Let it size naturally */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 2.4rem;
   }
 
-  .content-wrapper {
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
-@media (max-width: 400px) {
   .hero-content {
-    padding: 20px 16px;
-    border-radius: 16px;
+    padding: 16px 12px;
   }
 }
