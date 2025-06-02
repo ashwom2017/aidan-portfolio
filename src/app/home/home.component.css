@@ -162,3 +162,11 @@ button[color="accent"]:hover {
     padding: 16px 12px;
   }
 }
+
+.info-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
