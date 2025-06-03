@@ -5,7 +5,7 @@ import { PitchPredictorComponent } from '../pitch-predictor/pitch-predictor.comp
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, PitchPredictorComponent],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
