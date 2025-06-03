@@ -1,0 +1,101 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    mode="over"
+    [fixedInViewport]="true"
+    fixedTopGap="56"
+    role="navigation"
+    id="sidenav"
+  >
+    <mat-nav-list id="sidenav-list" aria-label="Mobile navigation">
+      <a
+        mat-list-item
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="drawer.close()"
+      >
+        Home
+      </a>
+      <a
+        mat-list-item
+        routerLink="/resume"
+        routerLinkActive="active"
+        (click)="drawer.close()"
+      >
+        Resume
+      </a>
+      <a
+        mat-list-item
+        routerLink="/projects"
+        routerLinkActive="active"
+        (click)="drawer.close()"
+      >
+        Projects
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-toolbar" role="banner">
+      <button
+        type="button"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        aria-label="Toggle navigation menu"
+        [attr.aria-expanded]="drawer.opened"
+        aria-controls="sidenav-list"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a routerLink="/" class="portfolio-title" (click)="drawer.close()">
+        Aidan's Portfolio
+      </a>
+      <span class="spacer"></span>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </a>
+        <a routerLink="/resume" routerLinkActive="active">Resume</a>
+        <a routerLink="/projects" routerLinkActive="active">Projects</a>
+      </nav>
+    </mat-toolbar>
+
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+
+    <footer class="app-footer" role="contentinfo">
+      <nav aria-label="Footer navigation">
+        <div>
+          &copy; {{ currentYear }} Aidan Shwom’s Portfolio &bull;
+          <a href="mailto:aidanshwomwork@gmail.com">Contact</a> &bull;
+          <a
+            href="https://github.com/ashwom2017"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          &bull;
+          <a
+            href="https://www.linkedin.com/in/aidan-shwom-a01700268/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </nav>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
