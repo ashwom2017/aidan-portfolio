@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./resume.component.css'],
 })
 export class ResumeComponent {
-  openResume() {
-    window.open('assets/AidanShwomNYResume_September2024.pdf', '_blank');
-  }
+  
 }

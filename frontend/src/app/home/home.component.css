@@ -171,3 +171,22 @@ button[color="accent"]:hover {
     padding: 16px 12px;
   }
 }
+
+/* Slightly reduce spacing for closer sections */
+.card-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px; /* reduced from 60px */
+}
+
+.hero-content-compact {
+  margin: 3vh auto; /* reduced from 5vh */
+  padding: 25px 35px; /* slightly smaller padding */
+}
+
+/* Make paragraphs tighter */
+p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 auto 2em; /* reduced bottom margin */
+}

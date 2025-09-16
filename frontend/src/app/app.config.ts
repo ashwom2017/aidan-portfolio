@@ -10,6 +10,7 @@ import { importProvidersFrom } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +22,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       RouterModule.forRoot(routes),
       MatCardModule,
-      MatButtonModule
+      MatButtonModule,
+      FormsModule
     )
   ]
 };

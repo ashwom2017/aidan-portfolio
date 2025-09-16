@@ -1,0 +1,8 @@
+backend/game_ids.csv
+backend/meta.pkl
+backend/pitch_model.h5
+backend/processed_games.txt
+backend/preprocess_pitch_data.py
+backend/train_model.py
+backend/X.npy
+backend/y.npy
