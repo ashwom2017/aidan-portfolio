@@ -11,11 +11,11 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Main layout containers */
 .sidenav-container,
 mat-sidenav-container,
 mat-sidenav-content {
-  height: 100%;
+  height: auto;  /* allow content to grow and scroll naturally */
+  min-height: 100vh; /* optional: ensure it fills viewport at least */
   background: transparent;
 }
 
@@ -32,7 +32,7 @@ mat-sidenav-content {
 
 /* Toolbar */
 .mat-toolbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   background-color: #01579b;
@@ -91,7 +91,7 @@ mat-sidenav-content {
 
 /* Main content */
 .main-content {
-  padding: 32px 24px;
+  padding: 96px 24px 32px;
   width: 100%;
   min-height: calc(100vh - 64px);
   display: flex;
