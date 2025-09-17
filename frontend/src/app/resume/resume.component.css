@@ -73,10 +73,35 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Lists */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.6rem; /* smaller for mobile to fit on one line */
+  }
+}
+
+/* Default bullets (desktop) */
 ul {
   list-style-type: disc;
-  margin-left: 1.5rem;
+  margin-left: 1rem; /* existing desktop indent */
+}
+
+/* Reduce indent on smaller screens */
+@media (max-width: 480px) {
+  ul {
+    margin-left: .5rem; /* smaller indent for mobile */
+    padding-left: 0;     /* reset browser default */
+  }
+}
+
+li {
+  padding: .25rem;
 }
 
 /* Skills */
