@@ -6,7 +6,6 @@ body {
   background: transparent !important;
   color: #0d47a1;
 }
-
 /* Header */
 header {
   background-color: #0288d1;
@@ -25,6 +24,31 @@ header p {
   margin: 0.5rem 0 0 0;
   font-size: 1rem;
   word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 0.85rem;
+  }
 }
 
 main {
@@ -117,7 +141,7 @@ ul {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
   margin-top: 16px;
 }
