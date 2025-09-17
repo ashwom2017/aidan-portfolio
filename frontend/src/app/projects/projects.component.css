@@ -1,0 +1,139 @@
+/* Section headers (including Projects) */
+h2 {
+  color: #0288d1;               /* Matches your resume section headers */
+  text-align: center;           /* Center the heading */
+  font-size: 3rem;              /* Slightly larger for emphasis */
+  font-weight: 450;             /* Bold */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Optional underline effect with gradient or solid */
+h2::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 3px;
+  background: #01579b;          /* Darker accent */
+  margin: 0.5rem auto 0 auto;   /* center under the heading */
+  border-radius: 2px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 0 auto;
+  max-width: 900px; /* constrain width to avoid touching edges */
+  padding: 0 1rem;  /* padding from screen edges */
+}
+
+/* Project Card */
+.project-card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: #0d47a1;
+}
+
+/* Project Titles */
+.project-card h3 {
+  color: #0288d1;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card h4 {
+  color: #01579b;
+  margin-bottom: 0.5rem;
+}
+
+/* Text inside project card */
+.project-card p,
+.project-card ul,
+.project-card li {
+  color: #0d47a1;
+  margin: 0.3rem 0;
+}
+
+.project-card ul {
+  margin-left: 1rem;  /* less indentation */
+  padding-left: 1rem; /* ensures bullet spacing stays consistent */
+  list-style-type: disc;
+}
+
+.project-card li {
+  margin: 0.25rem 0; /* tighter spacing between items */
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for first row */
+  grid-template-rows: auto auto;        /* two rows */
+  gap: 12px;
+}
+
+.media-placeholder {
+  background: #e3f2fd;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0288d1;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Make the video span full width on second row */
+.media-video-placeholder {
+  background: #e3f2fd;
+  height: 160px;
+  border-radius: 8px;
+  grid-column: 1 / -1; /* spans both columns */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0288d1;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Actual video embed */
+.media-video {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #000;
+}
+
+.media-caption {
+  font-size: 0.9rem;
+  color: #01579b;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 0 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* one project per row */
+    padding: 0 0.5rem;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr; /* one media item per row */
+  }
+}
