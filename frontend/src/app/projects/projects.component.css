@@ -13,21 +13,20 @@ h2 {
 h2::after {
   content: "";
   display: block;
-  width: 90%;
+  width: 92.5%;
   height: 3px;
   background: #01579b;          /* Darker accent */
   margin: 0.5rem auto 0 auto;   /* center under the heading */
   border-radius: 2px;
 }
 
-/* Projects Grid */
 .projects-grid {
   display: grid;
+  grid-template-columns: 1fr; /* always one card per row */
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   margin: 0 auto;
-  max-width: 900px; /* constrain width to avoid touching edges */
-  padding: 0 1rem;  /* padding from screen edges */
+  max-width: 900px; /* keeps it from stretching too wide */
+  padding: 0 1rem;
 }
 
 /* Project Card */
