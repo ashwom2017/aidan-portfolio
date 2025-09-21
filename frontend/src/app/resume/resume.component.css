@@ -190,6 +190,17 @@ li {
   line-height: 1.4;
 }
 
+.cert-link { 
+  color: #0d47a1; /* default lighter blue */
+  text-decoration: underline; /* underline on by default */
+  font-weight: bold; /* keep it bold */
+  transition: color 0.2s ease; /* smooth color fade */
+}
+
+.cert-link:hover {
+  color: #0288d1; /* darker blue on hover */
+}
+
 .projects-list {
   display: flex;
   flex-direction: column; /* stack cards vertically */
