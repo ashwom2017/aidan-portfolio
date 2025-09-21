@@ -43,6 +43,7 @@ h2::after {
   color: #0288d1;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-weight: 425;
 }
 
 .project-card h4 {
